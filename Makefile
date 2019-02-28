@@ -13,6 +13,12 @@ VENDOR_DIR=vendor
 
 all: build
 
+test-unit:
+	$(GO) test -v .
+
+test-integration:
+	$(GO) test -v ./tests -addr ${MULDER_ADDR}
+
 check: fmt build test
 
 build:
