@@ -22,9 +22,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         args:
-	- -redis-addr
-	- {{ .Release.Name }}-redis-master:6379
-	ports:
+        - -redis-addr
+        - {{ .Release.Name }}-redis-master:6379
+        ports:
         - containerPort: {{ .Values.service.internalPort }}
         livenessProbe:
           httpGet:
