@@ -13,6 +13,9 @@ VENDOR_DIR=vendor
 
 all: build
 
+test-unit:
+	$(GO) test -v .
+
 check: fmt build test
 
 build:
